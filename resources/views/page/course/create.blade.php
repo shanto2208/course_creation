@@ -273,7 +273,6 @@
 
                         let newKey = key.replace(/\./g, '_');
                         if (key.includes('modules')) {
-
                             let moduleIndex = key.split('.')[1];
                             const errorMessage = error.errors[key];
                             const errorElement = document.getElementById('error_module_title_' + moduleIndex);
@@ -286,7 +285,7 @@
                         if ( key.includes('title')) {
                             let Index = 1;
                             const errorMessage = error.errors[key];
-                            const errorElement = document.getElementById(newKey );
+                            const errorElement = document.getElementById(newKey);
                             console.log(newKey);
                             if (errorElement) {
                                 errorElement.innerText = errorMessage;
@@ -298,6 +297,7 @@
                             let Index = 1;
                             const errorMessage = error.errors[key];
                             const errorElement = document.getElementById(newKey);
+                            console.log(newKey);
                             if (errorElement) {
                                 errorElement.innerText = errorMessage;
                             }
@@ -307,7 +307,8 @@
                         if ( key.includes('url')) {
                             let Index = 1;
                             const errorMessage = error.errors[key];
-                            const errorElement = document.getElementById(newKey + Index);
+                            const errorElement = document.getElementById(newKey);
+                            console.log(newKey);
                             if (errorElement) {
                                 errorElement.innerText = errorMessage;
                             }

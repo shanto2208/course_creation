@@ -70,9 +70,11 @@ class CourseController extends Controller
                 'title' => $mod['title']
             ]);
     
-            $contentIndex = 1;
+            $contentIndex = 0;
 
             foreach ($mod['content'] as $cnt) {
+
+                $contentIndex++;
 
                 $contentValidator = Validator::make($cnt, [
 
@@ -97,7 +99,7 @@ class CourseController extends Controller
                 if ($contentValidator->fails()) {
 
                     foreach ($contentValidator->errors()->messages() as $field => $messages) {
-                        $validationErrors["$errorNum.content.length.$contentIndex"] = $messages[0];
+                        $validationErrors["$errorNum.content.length.$contentIndex.length"] = $messages[0];
 
                     }
                     continue;
@@ -113,13 +115,11 @@ class CourseController extends Controller
 
                     foreach ($contentValidator->errors()->messages() as $field => $messages) {
 
-                        $validationErrors["$errorNum.content.url.$contentIndex"] = $messages[0];
+                        $validationErrors["$errorNum.content.url.$contentIndex.url"] = $messages[0];
 
                     }
                     continue;
                 }
-
-
 
                 $module->contents()->create([
                     
@@ -129,7 +129,7 @@ class CourseController extends Controller
                     'source_type' => $cnt['source_type'] ?? null
                 ]);
 
-                $contentIndex++;
+                
             }
             $errorNum++;
         }
