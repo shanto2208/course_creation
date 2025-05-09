@@ -11,3 +11,6 @@
 
 4. Multiple module With multiple content
    ![image](https://github.com/user-attachments/assets/2bfab158-754d-4576-b91a-6c5d5ee3d713)
+
+5. Delete module and content
+![image](https://github.com/user-attachments/assets/630a655e-1bf0-4646-a27b-e5cb9ea302b4)
